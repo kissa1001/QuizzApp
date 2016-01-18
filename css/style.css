@@ -1,0 +1,167 @@
+body{
+	margin:0 0;
+	padding:0 0;
+	font-family: 'Philosopher', sans-serif;
+}
+
+/* First page*/
+#intro0{
+	/*display:none; */
+	background: url('../img/background0.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height:100vh;
+	margin:0 0;
+	padding-top:7em;
+	padding-right:7em;
+}
+.intro0{
+	display:none;
+    margin-top: 0; 
+    margin-bottom: 1em;
+    font-family: 'Righteous', cursive;
+    color:#fff;
+    font-size:7em;
+}
+/*Second Page*/
+#intro{
+	display:none; 
+	background: url('../img/background.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height:100vh;
+	padding-top:4em;
+}
+.start{
+    float:right;
+    text-align: center;
+}
+.intro{
+	font-size: 4em;
+	margin-top:0;
+	font-family: 'Philosopher', sans-serif;
+	text-align: center;
+}
+.characters>.container{
+	padding-left: 4em;
+	padding-right: 4em;
+}
+.characters img{
+	cursor:pointer;
+	-webkit-transition: all 1s ease; 
+    -moz-transition: all 1s ease; 
+    -ms-transition: all 1s ease; 
+    -o-transition: all 1s ease; 
+    transition: all 1s ease;
+}
+.characters img:hover{
+	-webkit-transform:scale(1.25); 
+    -moz-transform:scale(1.25); 
+    -ms-transform:scale(1.25); 
+    -o-transform:scale(1.25); 
+     transform:scale(1.25);
+}
+.characters h3{
+	font-family: 'Playball', cursive;
+	font-size:2.5em;
+}
+
+/*Third Page*/
+#main{
+	display:none;
+	height:1vh;
+	padding-top:1.7em;
+}
+.quizz{
+    background:#000;
+    padding-top:1em;
+    padding-bottom: 1em;
+}
+#question2,#question3,#question4,#question5 {
+	display:none;
+}
+#q2,#q3,#q4,#q5{
+	display:none;
+}
+.quizz h2{
+    font-size: 2em;
+    color:#fff;
+	font-family: 'Philosopher', sans-serif;
+	border:solid 1px #fff;
+	border-radius: 0px 20px 0px;
+	padding:1em 2em;
+}
+.quizz h3{
+	cursor:pointer;
+	font-size: 1.5em;
+    color:#fff;
+	font-family: 'Philosopher', sans-serif;
+	border:solid 1px #fff;
+	padding:0.5em 1em;
+}
+.mugsy{
+	float:left;
+}
+.mango{
+	float:left;
+}
+.correct,.incorrect{
+	display:none;
+}
+#next{
+	cursor:pointer;
+}
+#hostSay{
+	font-family: 'Playball', cursive;
+	font-size:1.5em;
+	color:#fff;
+    background-color: #FA5858;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #B2B2B2;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    vertical-align: top;   
+    margin-top:2em;      
+}
+
+#hostSay::before {
+	box-shadow: 2px -2px 2px 0 rgba( 178, 178, 178, .4 );
+    right: -9px;  
+    background-color: #FA5858;
+    content: " ";
+    display: block;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    transform:             rotate( 29deg ) skew( -35deg );
+    -moz-transform:    rotate( 29deg ) skew( -35deg );
+    -ms-transform:     rotate( 29deg ) skew( -35deg );
+    -o-transform:      rotate( 29deg ) skew( -35deg );
+    -webkit-transform: rotate( 29deg ) skew( -35deg );
+    width:  20px;
+}
+.answer:hover{
+	background-color:#0B0B61;
+}
+#gameOver{
+	display:none;
+    background: url('../img/gameOver-background.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height:100vh;
+}
+#gameOver h2{
+	font-family: 'Righteous', cursive;
+    color:#fff;
+    font-size:5em;
+}
+.mugsy-result,.mango-result > .fail{
+	display:none;
+}
+.btn-primary{
+	margin-top:4em;
+}
+.result{
+	margin-top: 10em;
+}

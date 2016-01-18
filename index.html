@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Quizz App</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="img/shortcut-icon.png"/>
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Righteous|Philosopher|Playball' rel='stylesheet' type='text/css'>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+	<section id="intro0">
+		<div class="start">
+			<h1 class="intro0">Welcome!</h1>
+			<button type="button" class="btn btn-lg btn-danger">Click to Start</button>
+		</div>
+	</section>
+	<section id="intro">
+		<div class="characters">
+			<div class="container">
+			    <div class="row">
+			        <h1 class="intro">Please choose your character!</h1>
+		        </div>
+			    <div class="row" style="padding-top:4em;">
+			        <div class="col-lg-6 text-center">
+				        <img class="character" id="mugsy" src="img/mugsy-intro.png" alt="mugsy-intro"/>
+				        <h3>Mugsy</h3>   
+			        </div>
+			        <div class="col-lg-6 text-center">
+				        <img class="character" id="mango" src="img/mango-intro.png" alt="mango-intro" width="200" height="200"/>
+				        <h3>Mango</h3>
+			        </div>
+		        </div>
+		    </div>
+		</div>
+	</section>
+	<section id="main">	    
+        <div class="progress">
+  			<div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+  			aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+    		0% Complete
+  			</div>
+		</div>
+		<div class="user">
+		    <div class="container">
+		    	<div class="mugsy">
+		    		<img class="ready" src="img/mugsy-ready.png" alt="mugsy-ready">
+		    		<img class="correct" src="img/mugsy-correctAnswer.png" alt="mugsy-correctAnswer">
+		    		<img class="incorrect" src="img/mugsy-incorrectAnswer.jpg" alt="mugsy-incorrectAnswer">
+                </div>
+                <div class="mango">
+					<img class="ready" src="img/mango-ready.png" width="200" height="200" alt="mango-ready">
+					<img class="correct" src="img/mango-correctAnswer.jpg" width="200" height="200" alt="mango-correctAnswer">
+		    		<img class="incorrect" src="img/mango-incorrectAnswer.png" width="200" height="200" alt="mango-incorrectAnswer">
+				</div>
+				<div class="host" style="float:right;">
+				    <p id="hostSay">Click on me to go to the next question!</p>
+					<img id="next" src="img/host.png" width="200" height="200" alt="host">
+			    </div>
+			</div>
+			<audio id="boo" src="sound/boo.mp3"></audio>
+			<audio id="clap" src="sound/clap.mp3"></audio>
+	    </div>
+		<div class="quizz text-center">
+			<div class="questionBlock">
+				<h2 class="question">What question must always be answered ''Yes''?</h2>
+				<h3 class="answer">Are you a human?</h3>
+				<h3 class="answer">Does everyone have a biological mother?</h3>
+				<h3 class="answer">Will everyone die someday?</h3>
+				<h3 class="answer rightAnswer">What does Y-E-S spell?</h3>
+			</div>
+		</div>
+	</div>
+	</section>
+	<section id="gameOver" class="text-center">
+		<div class="container">
+			<h2 id="result">Result</h2>
+			<button type="button" class="btn btn-lg btn-primary">Start over <i class="fa fa-spin fa-refresh"></i></button>
+		    <div class="result">
+			    <div class="mugsy-result">
+					<img class="win" src="img/mugsy-win.png" alt="mugsy-win">
+					<img class="fail" src="img/mugsy-fail.png" alt="mugsy-fail">
+				</div>
+			<div class="mango-result">
+				<img class="win" src="img/mango-win.png" width="200" height="200" alt="mango-win">
+				<img class="fail" src="img/mango-fail.png" width="200" height="200" alt="mango-fail">
+			</div>
+			</div>
+		</div>
+
+	</section>
+</body>
+</html>
