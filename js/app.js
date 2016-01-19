@@ -63,6 +63,7 @@ var questionBlock5 = new questionBlock(
 var answered = false;
 var percent = 0;
 var numQuestion = 0;
+var countCorrect = 0;
 $('.questionBlock h3').click(function() {
     if(!answered) {
     if($('.questionBlock h3').index(this) !== questionList[numQuestion].rightAnswer){
@@ -70,12 +71,15 @@ $('.questionBlock h3').click(function() {
         $('.answer'+questionList[numQuestion].rightAnswer).addClass('right');
         $('.ready').hide();
         $('.incorrect').show();
+        $('.correct').hide();
         playBoo();
     }
     else {
     	$('.ready').hide();
     	$('.correct').show();
+        $('.incorrect').hide();
     	$(this).addClass('right');
+        countCorrect++;
     	playClap();
     }
     numQuestion++;
@@ -98,30 +102,33 @@ answered = false;
         $('.answer1').text(currentQuestion.answer[1]);
         $('.answer2').text(currentQuestion.answer[2]);
         $('.answer3').text(currentQuestion.answer[3]);
+        $('.questionBlock h3').removeClass('right');
+        $('.questionBlock h3').removeClass('wrong');
     }
     else{
     	$('#main').hide();
     	$('#gameOver').fadeIn(2500);
+        scoreCheck();
     }
+
 };
 $('#next').click (function(){
     nextQuestion();
 });
-/*
+
     var scoreCheck = function(){
- 	var corectAnswers = ('.questionBlock h3').index(this) == questionList[numQuestion].rightAnswer);
-     if(correctAnswers == 5){
+     if(countCorrect == 5){
      	$('#result').text('Congratulations, You became a millionare!');
      	$('.win').fadeIn(1500);
      	$('.fail').hide();
      }
      else{
-     	$('#result').text('Opps! You answered correct only'+' '+ correctAnswers+ ' '+'questions');
+     	$('#result').text('Opps! You answered correct only'+' '+ countCorrect + ' '+'questions');
      	$('.fail').fadeIn(1500);
      	$('.win').hide();
     }
  };
-*/
+
 
  function playBoo () {
   $('#boo')[0].volume = 0.5;
