@@ -134,15 +134,21 @@ body{
     height: 16px;
     position: absolute;
     top: 11px;
-    transform:             rotate( 29deg ) skew( -35deg );
+    transform:         rotate( 29deg ) skew( -35deg );
     -moz-transform:    rotate( 29deg ) skew( -35deg );
     -ms-transform:     rotate( 29deg ) skew( -35deg );
     -o-transform:      rotate( 29deg ) skew( -35deg );
     -webkit-transform: rotate( 29deg ) skew( -35deg );
     width:  20px;
 }
-.answer:hover{
+.questionBlock > h3:hover{
 	background-color:#0B0B61;
+}
+.right{
+ background-color: #088A08;
+}
+.wrong{
+background-color: #FE2E2E;
 }
 #gameOver{
 	display:none;

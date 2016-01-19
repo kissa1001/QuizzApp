@@ -28,40 +28,46 @@ $('.btn-primary').click(function(){
 	location.reload();
 });
 //Questions
+var questionList = [];
 function questionBlock(question,answer,rightAnswer){
 	this.question=question;
 	this.answer=answer;
 	this.rightAnswer=rightAnswer;
+    questionList.push(this);
 }
 var questionBlock1 = new questionBlock(
 	'What question must always be answered Yes?',
 	['Are you a human?','Does everyone have a biological mother?','Will everyone die someday?','What does Y-E-S spell?'],
 	3
 );
-var questionBlock2 = (
+var questionBlock2 = new questionBlock(
 	'How many sides does a circle have?',
 	['Four','None. Its a circle','The back','Two'],
 	3
 );
-var questionBlock3 = (
+var questionBlock3 = new questionBlock (
 	'What has a tail but no body?',
 	['A human!','A cloud!','A coin!','A monkey!'],
 	2
 );
-var questionBlock4 = (
+var questionBlock4 = new questionBlock(
 	'When do you stop at green and go at red?',
 	['Watermelon!','Garden','Traffic Light!','In India'],
 	0
 );
-var questionBlock5 = (
+var questionBlock5 = new questionBlock(
 	'What word in the English language is always spelled',
 	['Onomatopoeia','Incorrectly','Shakespeare','Its possible to spell anything right as long as you learn it'],
 	1
 );
-$('h3').click(function() {
-    if($('h3').index(this) !== questionBlock['rightAnswer']){
-        $(this).css('background-color','#FE2E2E');
-        $('.rightAnswer').css('background-color','#088A08');
+var answered = false;
+var percent = 0;
+var numQuestion = 0;
+$('.questionBlock h3').click(function() {
+    if(!answered) {
+    if($('.questionBlock h3').index(this) !== questionList[numQuestion].rightAnswer){
+        $(this).addClass('wrong');
+        $('.answer'+questionList[numQuestion].rightAnswer).addClass('right');
         $('.ready').hide();
         $('.incorrect').show();
         playBoo();
@@ -69,32 +75,41 @@ $('h3').click(function() {
     else {
     	$('.ready').hide();
     	$('.correct').show();
-    	$(this).css('background-color','#088A08');
+    	$(this).addClass('right');
     	playClap();
-    	progress();
     }
-    nextQuestion();
+    numQuestion++;
+    percent= numQuestion*20;
+    progress();
+}
+answered = true;
 });
 var progress = function(){
-	var value = 0;
-	value++;
-    $('.progress-bar').css('width', value+'20%').attr('aria-valuenow', value); 
+    $('.progress-bar').css('width', percent + '%').attr('aria-valuenow', percent);
+    $('#percent').text(percent) ;    
 };
-/*
+
 var nextQuestion = function(){
-	var currentQuestion= questionBlock(this);
-    if(currentQuestion <=5 ){
-        var newQuestion = currentQuestion.next();
-        currentQuestion.fadeOut(1000).removeClass(questionBlock);
-        nextSlide.fadeIn(1000).addClass(questionBlock);
+answered = false;
+	var currentQuestion= questionList[numQuestion];
+    if(numQuestion < 5 ){
+        $('.question').text(currentQuestion.question);
+        $('.answer0').text(currentQuestion.answer[0]);
+        $('.answer1').text(currentQuestion.answer[1]);
+        $('.answer2').text(currentQuestion.answer[2]);
+        $('.answer3').text(currentQuestion.answer[3]);
     }
     else{
     	$('#main').hide();
     	$('#gameOver').fadeIn(2500);
     }
 };
- var scoreCheck = function(){
- 	var corectAnswers = ($('h3').index(this) == questionBlock['rightAnswer']);
+$('#next').click (function(){
+    nextQuestion();
+});
+/*
+    var scoreCheck = function(){
+ 	var corectAnswers = ('.questionBlock h3').index(this) == questionList[numQuestion].rightAnswer);
      if(correctAnswers == 5){
      	$('#result').text('Congratulations, You became a millionare!');
      	$('.win').fadeIn(1500);
@@ -104,9 +119,9 @@ var nextQuestion = function(){
      	$('#result').text('Opps! You answered correct only'+' '+ correctAnswers+ ' '+'questions');
      	$('.fail').fadeIn(1500);
      	$('.win').hide();
-     }
+    }
  };
- */
+*/
 
  function playBoo () {
   $('#boo')[0].volume = 0.5;
@@ -118,4 +133,5 @@ var nextQuestion = function(){
   $('#clap')[0].load();
   $('#clap')[0].play();
 }
+nextQuestion();
 });
