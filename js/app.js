@@ -104,6 +104,9 @@ answered = false;
         $('.answer3').text(currentQuestion.answer[3]);
         $('.questionBlock h3').removeClass('right');
         $('.questionBlock h3').removeClass('wrong');
+        $('.ready').show();
+        $('.correct').hide();
+        $('.incorrect').hide();
     }
     else{
     	$('#main').hide();
