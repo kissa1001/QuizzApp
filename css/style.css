@@ -70,10 +70,9 @@ body{
 #main{
 	display:none;
 	height:1vh;
-	padding-top:1.7em;
 }
 .quizz{
-    background:#000;
+    background-color: #000;
     padding-top:1em;
     padding-bottom: 1em;
 }
@@ -98,6 +97,11 @@ body{
 	font-family: 'Philosopher', sans-serif;
 	border:solid 1px #fff;
 	padding:0.5em 1em;
+}
+.user{
+	background: url('../img/background.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .mugsy{
 	float:left;
