@@ -13,7 +13,6 @@ body{
 	min-height:100vh;
 	margin:0 0;
 	padding-top:7em;
-	padding-right:7em;
 }
 .intro0{
 	display:none;
@@ -32,10 +31,7 @@ body{
 	min-height:100vh;
 	padding-top:4em;
 }
-.start{
-    float:right;
-    text-align: center;
-}
+
 .intro{
 	font-size: 4em;
 	margin-top:0;
@@ -102,6 +98,7 @@ body{
 	background: url('../img/background.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
+	padding-top:1.5em;
 }
 .mugsy{
 	float:left;
